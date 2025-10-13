@@ -7,6 +7,7 @@
 - It can track the norms of the parameters and the updates in [`norm_helper.py`](./disco/norm_helper.py). 
     - one can easily to extend these code to have Spectral Clip which forces weights live on Stiefel manifold in distributed manner.
 - It integrates with TorchTitan’s model and parallel‑dimension abstractions. Please follow [TorchTitan’s](https://github.com/pytorch/torchtitan) conventions for model definitions and world‑mesh/parallel‑dimension.
+- It is first featured in our work ["Optimal Scaling Needs Optimal Norm"](https://arxiv.org/abs/2510.03871)
 
 
 
