@@ -96,10 +96,10 @@ class AbstractDiSCO(torch.optim.Optimizer):
         """
         if norm_factor == "spectral":
             # Use the last two dims so this works for 2-D and batched 3-D
-            g = g * (g.size(-2) / g.size(-1)) ** 0.5
+            g = g * torch.sqrt(torch.tensor(g.size(-2) / g.size(-1)))
 
         elif norm_factor == "image_spectral":
-            ratio = (g.size(-2) / g.size(-1)) ** 0.5
+            ratio = torch.sqrt(torch.tensor(g.size(-2) / g.size(-1)))
             g = g * (ratio if ratio > 1 else 1)
 
         elif norm_factor.startswith("embed"):
